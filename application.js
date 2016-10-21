@@ -824,7 +824,7 @@ function setupGui() {
           newSemimajor: Math.cbrt(Math.pow(earth_period/2.0 /10.0 * Math.sqrt(300*300*300),2)), // 480 
           newEccentricity: 0.7,
           newInclination: 63.4,
-          newRaan: raan,
+          newRaan: 60,
           newArgumentOfPerigee: -90,
           newMeanAnomaly: meanAnomaly
         }
@@ -849,7 +849,7 @@ function setupGui() {
           newMeanAnomaly: meanAnomaly
         }
       },
-      "Inyección Tronador": {
+      "Tronador injection": {
         "0": {
           newSemimajor: 110,
           newEccentricity: 0.0074,
