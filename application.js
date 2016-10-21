@@ -1,7 +1,17 @@
 "use strict"; // good practice - see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
-////////////////////////////////////////////////////////////////////////////////
-//                                                                            //
-////////////////////////////////////////////////////////////////////////////////
+/*****************************************************************************\
+  Engineering Faculty, University of Buenos Aires (FIUBA)
+  Electronic Engineering
+  An illustrative description of terminology for the thesis defense
+  2016
+ 
+  Sampayo, Sebastián Lucas
+  Padrón: 93793
+  e-mail: sebisampayo@gmail.com
+          ssampayo@fi.uba.ar
+ 
+  File: Javascript - WebGL application. Using THREE.js library.
+\*****************************************************************************/
 /*global THREE, Coordinates, $, document, window, dat*/
 
 // TODO:
@@ -849,7 +859,7 @@ function setupGui() {
           newMeanAnomaly: meanAnomaly
         }
       },
-      "Tronador injection": {
+      "Inyección Tronador": {
         "0": {
           newSemimajor: 110,
           newEccentricity: 0.0074,
