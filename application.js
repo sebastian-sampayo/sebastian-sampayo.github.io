@@ -39,7 +39,7 @@ var grid_step = 100;
 // var background_color = 0xFFFFFF; // White
 var background_color = 0x000000; // Black
 var background = true; // true = Black,  false = White
-var create_stars = false;
+var create_stars = true;
 // Orbit elements
 var semimajor = 300;
 var eccentricity = 0.5;
