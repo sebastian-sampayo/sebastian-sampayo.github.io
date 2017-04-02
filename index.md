@@ -16,9 +16,9 @@ This a personal website designed to host some featured projects of my career.
 I am an Electronic Engineer graduated from the University of Buenos Aires.
 In this web you can take a look at my projects, download my Curriculum Vitae and also my Thesis report.
 
-## WebGL Demos
+# WebGL Demos
 
-### Amusement Park in WebGL
+## Amusement Park in WebGL
 
 ![Amusement Park][amusement]
 
@@ -27,7 +27,7 @@ I developed this project when I was in college at the course "Graphic Systems [8
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
 
 
-### KeplerOrbit
+## KeplerOrbit
 
 ![Kepler Orbit][kepler]
 
@@ -36,7 +36,7 @@ I developed this WebGL demo when I was preparing for my Thesis defence. It helps
 [Link to demo](KeplerOrbit/index.html) - [Link to source](https://github.com/sebastian-sampayo/KeplerOrbit)
 
 
-## Thesis
+# Thesis
 
 ![Thesis][thesis]
 
@@ -53,11 +53,11 @@ This work was performed within the framework of a collaboration agreement betwee
 [Link to PDF](Thesis/SLSampayo-Tesis_10Nov16.pdf)
 
 
-## Self-Driving Car Engineering Projects
+# Self-Driving Car Engineering Projects
 
 These projects were done through the Self-Driving Car Engineer Nanodegree course.
 
-### Behavioral Cloning
+## Behavioral Cloning
 
 ![Simulator][behavioral]
 
@@ -66,7 +66,7 @@ Here I built and trained a convolutional neural network for end-to-end driving i
 [Link to source](https://github.com/sebastian-sampayo/Behavioral-Cloning-Project-Udacity)
 
 
-### Vehicle Detection and Tracking
+## Vehicle Detection and Tracking
 
 ![Heatmap][vehicleDet]
 
