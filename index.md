@@ -10,15 +10,15 @@ In this web you can take a look at my projects, download my Curriculum Vitae and
 
 ## WebGL Demos
 
-### Amusement Park in WebGL [Link to demo](AmusementPark/index-en.html)
+### Amusement Park in WebGL   -   [Link to demo](AmusementPark/index-en.html)
 I developed this project when I was in college at the course "graphic systems". There we learnt about 3D models, rotations, translations, 4D spaces, light models, shaders, and more. We used Javascript and WebGL to code several projects. This one was my final project, and the professors selected it as a featured project hosted in the course website. 
 
 
-### KeplerOrbit [Link to demo](KeplerOrbit/index.html)
+### KeplerOrbit   -   [Link to demo](KeplerOrbit/index.html)
 I developed this WebGL demo when I was preparing for my Thesis defence. It helps explaining astronomical terminology and classical elements of a Keplerian orbit, as it draws the Earth, the satellite, its orbit, some common frames and reference objects used in my Thesis work. I also used it to take screenshots to enhance some parts of the report.
 
 
-## Thesis [Link to PDF](Thesis/SLSampayo-Tesis_10Nov16.pdf)
+## Thesis   -   [Link to PDF](Thesis/SLSampayo-Tesis_10Nov16.pdf)
 **Title**: "Guidance, Navigation and Control System for injection of small satellite into LEO (low-Earth orbit)" 
 **Advisor**: Dr. Eng. Juan I. Giribet
 
