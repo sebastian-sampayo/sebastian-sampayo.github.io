@@ -1,5 +1,6 @@
 ---
 title: Index
+tagline: tagline in index
 ---
 
 # title
