@@ -1,3 +1,8 @@
+---
+layout: post
+title: Index
+---
+
 # title
 
 ## Welcome to my personal website
