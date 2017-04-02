@@ -1,8 +1,3 @@
----
-title: This is my title
----
-
-
 # title
 
 ## Welcome to my personal website
