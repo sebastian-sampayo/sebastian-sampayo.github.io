@@ -1,0 +1,431 @@
+<!--
+/*****************************************************************************\
+  Facultad de Ingeniería de la Universidad de Buenos Aires
+  Sistemas Gráficos
+  Trabajo Práctico
+  2° Cuatrimestre de 2015
+ 
+  Sampayo, Sebastián Lucas
+  Padrón: 93793
+  e-mail: sebisampayo@gmail.com
+ 
+  Página HTML + Shaders
+\*****************************************************************************/
+-->
+<!-- Este archivo cuenta con todo lo básico para generar una aplicación de WebGL
+     Aquí están los shaders y la página en HTML.
+     La aplicación específica se debe codificar en WebGLApp.js
+     En el directorio Object3D/ se encuentran prototipos de clases de objetos 3D
+     genéricos para utilizar.
+     
+     
+     La jerarquía de archivos de mayor a menor nivel de abstracción es:
+     
+     index
+     WebGLApp IO_handle
+     Roller_Coaster Wonder_Wheel etc
+     Rails Wheel etc
+     Cilinder Sphere etc
+     Profile2D
+     Object3D
+     utils
+-->
+<html>
+
+<head>
+<title>SG8643</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<script type="text/javascript" src="utilities/js/glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="utilities/js/webgl-utils.js"></script>
+<script src="utilities/js/jquery-1.11.2.min.js"></script>
+<!-- <script src="js/jquery.mousewheel.js"></script> -->
+<script src="utilities/js/jquery.mousewheel.min.js"></script>
+    
+<script type="text/javascript" src="utilities/Object3D/inheritPrototype.js"></script>
+<script type="text/javascript" src="utilities/utils.js"></script>
+<script type="text/javascript" src="utilities/Object3D/Object3D.js"></script>
+<script type="text/javascript" src="utilities/Profile2D/Profile2D.js"></script>
+<script type="text/javascript" src="utilities/Profile2D/Circle.js"></script>
+<script type="text/javascript" src="utilities/Profile2D/Rectangle.js"></script>
+<script type="text/javascript" src="utilities/Object3D/Cilinder.js"></script>
+<script type="text/javascript" src="utilities/Object3D/Sphere.js"></script>
+<script type="text/javascript" src="utilities/Object3D/Dome.js"></script>
+<script type="text/javascript" src="utilities/Object3D/AxisHelper.js"></script>
+<script type="text/javascript" src="utilities/Roller_Coaster/Roller_Coaster.js"></script>
+<script type="text/javascript" src="utilities/Roller_Coaster/Rails.js"></script>
+<script type="text/javascript" src="utilities/Roller_Coaster/Car.js"></script>
+<script type="text/javascript" src="utilities/Roller_Coaster/Columns.js"></script>
+<script type="text/javascript" src="utilities/Roller_Coaster/Unions.js"></script>
+<script type="text/javascript" src="utilities/Swing_Carousel/Swing_Carousel.js"></script>
+<script type="text/javascript" src="utilities/Swing_Carousel/Column.js"></script>
+<script type="text/javascript" src="utilities/Swing_Carousel/Cone.js"></script>
+<script type="text/javascript" src="utilities/Swing_Carousel/Top.js"></script>
+<script type="text/javascript" src="utilities/Swing_Carousel/Arm.js"></script>
+<script type="text/javascript" src="utilities/Swing_Carousel/Chair.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Wonder_Wheel.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Kickstand.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Base.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Wheel.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Arm.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Cabin.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Top_profile2D.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Top3D.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Bottom_profile2D.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Bottom3D.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Side_top.js"></script>
+<script type="text/javascript" src="utilities/Wonder_Wheel/Cabin/Side_bottom.js"></script>
+<script type="text/javascript" src="utilities/Lake/Lake.js"></script>
+<script type="text/javascript" src="utilities/Lake/Lake2.js"></script>
+<script type="text/javascript" src="utilities/IO_handle.js"></script>
+<script type="text/javascript" src="WebGLApp.js"></script>
+
+<!-- ------------------------ todo esto puede ir a shaders.js -------------------- -->
+<!-- Esto no funciona, tiene que estar en el mismo archivo...
+<script type="text/html" src="shaders/x-fragment.html"></script>
+<script id="shader-fs" type="x-shader/x-fragment" src="shaders/x-fragment.js"></script>
+-->
+<!-- Usamos per-fragment ligthing, ya que este método funciona mejor con 
+    el reflejo especular -->
+<!-- per fragment ligthing -->
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vTransformedNormal;
+    varying vec4 vPosition;
+    varying vec3 vTransformedTangent;
+    varying vec3 vTransformedBinormal;        
+
+    uniform bool uUseLighting;
+    uniform bool uUseTextures;
+    uniform bool uShowSpecularHighlights;
+    uniform bool uUseNormalMap;
+    uniform bool uUseReflectionMap;
+    uniform bool uUseWaterFX;
+    uniform bool uUseColor;
+
+    uniform vec3 uAmbientColor;
+    uniform vec3 uLightPosition;
+    uniform vec3 uDirectionalDiffuseColor;
+    uniform vec3 uDirectionalSpecularColor;
+    uniform float uReflectionFactor;
+    uniform float uColorFactor;
+        
+    uniform float uMaterialShininess;
+
+    uniform sampler2D uTextureColor;
+    uniform sampler2D uTextureNormal;
+    uniform sampler2D uTextureReflection;   
+    
+    uniform vec3 uColor;
+    
+    uniform float uTime;
+
+    void main(void) {
+        vec3 lightWeighting = vec3(1.0, 1.0, 1.0);
+        float specularLightWeighting = 0.0;
+        vec3 pos;
+        vec3 normal = normalize(vTransformedNormal);
+        vec3 eyeDirection = normalize(-vPosition.xyz);
+        vec3 reflectionDirection;
+        float M_PI = 3.1415926535897932384626433832795;
+        vec2 textureCoords = vTextureCoord;
+        
+        // Efecto de movimiento del agua
+        if (uUseWaterFX) {
+          textureCoords.s += uTime/40.0;
+        }
+        
+        // Iluminación
+        if (uUseLighting) {
+            vec3 lightDirection = normalize(uLightPosition - vPosition.xyz);
+            
+            // Mapa de normales
+            if(uUseNormalMap) {
+              // Esta matriz transforma del sistema TBN a coordenadas de Vista:
+              mat3 fromTangentSpace = mat3(
+                  vTransformedTangent.x, vTransformedTangent.y, vTransformedTangent.z,
+                  vTransformedBinormal.x, vTransformedBinormal.y, vTransformedBinormal.z, 
+                  vTransformedNormal.x, vTransformedNormal.y, vTransformedNormal.z
+              );
+              
+              // Cargo el RGB del mapa de normales (rango 0-255)
+              normal = texture2D(uTextureNormal, textureCoords).xyz;
+              // Normalizo [0, 1]
+              normal = normalize(normal);
+              // Escalo al rango [-1, 1] ,
+              // ya que el 128 del RGB corresponde al 0 del TBN
+              //  el 0 del RGB al -1 del TBN, y el 255 del RGB al 1 del TBN
+              // Por alguna razón con .5 no anda bien. Con .41 anda perfecto.
+              normal = normalize(normal - vec3(0.41, 0.41, 0.41));
+              //normal = normalize(normal - vec3(0.5, 0.5, 0.5));
+              //normal = normalize(normal - vec3(0.7, 0.7, 0.7));
+              normal = fromTangentSpace * normal;
+              normal = normalize(normal);
+            }
+
+            // Luz difusa
+            float diffuseLightWeighting = max(dot(normal, lightDirection), 0.0);
+            
+            // Reflexión especular
+            if (uShowSpecularHighlights) {
+              if (diffuseLightWeighting > 0.0) {          
+                  reflectionDirection = reflect(-lightDirection, normal);
+
+                  specularLightWeighting = pow(max(dot(reflectionDirection, eyeDirection), 0.0), uMaterialShininess);
+              }
+            }
+
+            // Sumatoria de iluminaciones
+            lightWeighting = uAmbientColor
+                + uDirectionalSpecularColor * specularLightWeighting
+                + uDirectionalDiffuseColor * diffuseLightWeighting;
+        }
+        
+        // Mapa de reflexión esférico
+        vec4 reflectionColor = vec4(0.0, 0.0, 0.0, 0.0);
+        if (uUseReflectionMap) {
+          reflectionDirection = reflect(-eyeDirection, normal);
+          reflectionDirection = normalize(reflectionDirection);
+
+          float x = reflectionDirection[0];
+          float y = reflectionDirection[1];
+          float z = reflectionDirection[2];          
+          float theta = acos(y) * sign(y);
+          float phi = acos(x/sin(theta)) * sign(z);
+          
+          float reflection_u = 1.0 - phi/2.0/M_PI;
+          float reflection_v = 1.0 - theta/M_PI;
+          reflectionColor = texture2D(uTextureReflection, vec2(reflection_u, reflection_v));
+        }
+
+        // Textura ( Color difuso )
+        vec4 fragmentColor;
+        float colorFactor = 0.0;
+        if (uUseColor) {
+          colorFactor = uColorFactor;
+        }
+        if (uUseTextures) {
+            fragmentColor = texture2D(uTextureColor, vec2(textureCoords.s, textureCoords.t));
+            fragmentColor = vec4(mix(fragmentColor.rgb, uColor, colorFactor), fragmentColor.a);
+        } else {
+            fragmentColor = vec4(uColor, 1.0);
+        }
+        
+        // Color final del fragmento
+        float alpha = 1.0 - uReflectionFactor;
+        gl_FragColor = vec4(fragmentColor.rgb * lightWeighting * vec3(alpha)
+                            + reflectionColor.rgb * vec3(uReflectionFactor), fragmentColor.a);
+    }
+</script>
+
+
+<!-- per fragment ligthing -->
+<script id="shader-vs" type="x-shader/x-vertex">
+  // x-vertex.js
+    attribute vec3 aVertexPosition;
+    attribute vec2 aTextureCoord;
+    attribute vec3 aVertexTangent;
+    attribute vec3 aVertexNormal;
+    
+
+    uniform mat4 uViewMatrix;
+    uniform mat4 uModelMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+    // Esta es la matriz de vista pero sin escalado ni translaciones
+    uniform mat3 uNViewMatrix;
+    
+    uniform bool uUseNormalMap;    
+    uniform vec2 uTextureCoordFactor;
+    
+    varying vec4 vPosition;
+    varying vec2 vTextureCoord;
+    varying vec3 vTransformedNormal;    
+    varying vec3 vTransformedTangent;
+    varying vec3 vTransformedBinormal;    
+    
+    void main(void) {
+		  // Transformamos al vértice al espacio de la cámara
+      vPosition = uViewMatrix * uModelMatrix * vec4(aVertexPosition, 1.0);
+        		
+	  	// Transformamos al vértice al espacio de la proyección
+      gl_Position = uPMatrix * vPosition;
+		
+		  // Coordenada de textura, afectadas por factor de escala uniform
+      vTextureCoord = aTextureCoord * uTextureCoordFactor;
+      
+      // Esto queda en coordenadas de vista! uNMatrix lleva a coordenadas de mundo.
+      // Pero para hacer los cálculos de iluminación necesito coordenadas de vista!!
+      vTransformedNormal = normalize(uNViewMatrix * uNMatrix * normalize(aVertexNormal));	
+      if (uUseNormalMap) {
+        vTransformedTangent = normalize(uNViewMatrix * uNMatrix * normalize(aVertexTangent));	
+        vTransformedBinormal = normalize(cross(vTransformedNormal, vTransformedTangent));
+        vTransformedTangent = cross(vTransformedBinormal, vTransformedNormal);
+      }
+    }					
+</script>
+
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+
+<script type="text/javascript">
+
+    var gl;
+
+    function initGL(canvas) {
+        try {
+            gl = canvas.getContext("experimental-webgl");
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+        } catch (e) {
+        }
+        if (!gl) {
+            alert("Could not initialise WebGL, sorry :-(");
+        }
+    }
+
+
+  // --------------- shaders.js -------------------- //
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType == 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type == "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type == "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+
+       function initShaders() {
+        var fragmentShader = getShader(gl, "shader-fs");
+        var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+            alert("Could not initialise shaders");
+            alert(gl.getProgramInfoLog(shaderProgram));
+        }
+        
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+
+        shaderProgram.vertexTangentAttribute = gl.getAttribLocation(shaderProgram, "aVertexTangent");
+        gl.enableVertexAttribArray(shaderProgram.vertexTangentAttribute);
+
+        shaderProgram.vertexNormalAttribute = gl.getAttribLocation(shaderProgram, "aVertexNormal");
+        gl.enableVertexAttribArray(shaderProgram.vertexNormalAttribute);
+        
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.ViewMatrixUniform = gl.getUniformLocation(shaderProgram, "uViewMatrix");
+        shaderProgram.ModelMatrixUniform = gl.getUniformLocation(shaderProgram, "uModelMatrix");
+        shaderProgram.nMatrixUniform = gl.getUniformLocation(shaderProgram, "uNMatrix");
+        shaderProgram.textureColorUniform = gl.getUniformLocation(shaderProgram, "uTextureColor");
+        shaderProgram.textureNormalUniform = gl.getUniformLocation(shaderProgram, "uTextureNormal");  
+        shaderProgram.textureReflectionUniform = gl.getUniformLocation(shaderProgram, "uTextureReflection");       
+        shaderProgram.materialShininessUniform = gl.getUniformLocation(shaderProgram, "uMaterialShininess");
+        shaderProgram.showSpecularHighlightsUniform = gl.getUniformLocation(shaderProgram, "uShowSpecularHighlights");
+        shaderProgram.useTexturesUniform = gl.getUniformLocation(shaderProgram, "uUseTextures");        
+        shaderProgram.useLightingUniform = gl.getUniformLocation(shaderProgram, "uUseLighting");
+        shaderProgram.ambientColorUniform = gl.getUniformLocation(shaderProgram, "uAmbientColor");
+        shaderProgram.lightingDirectionUniform = gl.getUniformLocation(shaderProgram, "uLightPosition");
+        shaderProgram.directionalSpecularColorUniform = gl.getUniformLocation(shaderProgram, "uDirectionalSpecularColor");
+        shaderProgram.directionalDiffuseColorUniform = gl.getUniformLocation(shaderProgram, "uDirectionalDiffuseColor");
+        shaderProgram.colorUniform = gl.getUniformLocation(shaderProgram, "uColor");
+        shaderProgram.reflectionFactorUniform = gl.getUniformLocation(shaderProgram, "uReflectionFactor");
+        shaderProgram.NViewMatrixUniform = gl.getUniformLocation(shaderProgram, "uNViewMatrix");
+        shaderProgram.useNormalMap = gl.getUniformLocation(shaderProgram, "uUseNormalMap");
+        shaderProgram.useReflectionMap = gl.getUniformLocation(shaderProgram, "uUseReflectionMap");
+        shaderProgram.timeUniform = gl.getUniformLocation(shaderProgram, "uTime");
+        shaderProgram.useWaterFX = gl.getUniformLocation(shaderProgram, "uUseWaterFX");
+        shaderProgram.useColorUniform = gl.getUniformLocation(shaderProgram, "uUseColor");   
+        shaderProgram.colorFactorUniform = gl.getUniformLocation(shaderProgram, "uColorFactor");    
+        shaderProgram.textureCoordFactorUniform = gl.getUniformLocation(shaderProgram, "uTextureCoordFactor");  
+    }
+// --------- Hasta acá es el shaders.js ---------------------------- //
+
+
+// Acá estaba todas las funciones y variables específicas de la aplicación
+// => WebGLApp.js
+
+</script>
+
+
+</head>
+
+<!-- en "WebGLApp.js" debe existir esta función "webGLStart()" -->
+<body onload="webGLStart();">
+    <center>
+            <h1>FIUBA - Sistemas Gráficos - [86.43]</h1>
+            <h2>Trabajo Práctico - 2° Cuatrimestre 2015</h2>
+            <canvas id="TP2" style="border: none;" width="1280" height="720">
+            Your browser does not support the HTML5 canvas element.
+            </scanvas>
+            
+        </center>
+    <br/>
+    <a href="mailto:sebisampayo@gmail.com" target="_top">Sebastián Lucas Sampayo</a>. <a href="http://www.fi.uba.ar/">FIUBA</a>.
+    <br/><br/>
+    
+    Controles de Cámara: <br/> <br/>
+    - Mov. del Mouse (Arrastrando click izquierdo): orbitar con respecto al centro de la escena. <br/>
+    - Rueda del mouse: Zoom in (rueda arriba) / Zoom out (rueda abajo). <br/>
+    - Tecla C: Cambiar de cámara. Alterna entre: Orbital, Primera Persona (caminando en el suelo), Carrito de Montaña Rusa. <br/>
+    <br/>
+ 
+    Controles de cámara en primera persona:
+    <br/> 
+    <br/>
+    - Tecla W: Moverse hacia adelante (manteniendo dirección).
+    <br/>
+    - Tecla S: Moverse hacia atrás (manteniendo dirección).
+    <br/>
+    - Tecla A: Moverse hacia la izquierda (manteniendo dirección).
+    <br/>
+    - Tecla D: Moverse hacia la derecha (manteniendo dirección).
+    <br/>
+    - Flechas: Cambiar dirección hacia donde apunta la cámara.
+    <br/>
+
+ </body>
+
+</html>
