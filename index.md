@@ -18,7 +18,7 @@ In this web you can take a look at my projects, download my Curriculum Vitae and
 
 ## WebGL Demos
 
-### [Amusement Park in WebGL](AmusementPark/index-en.html)
+### Amusement Park in WebGL
 
 ![Amusement Park][amusement]
 
@@ -27,7 +27,7 @@ I developed this project when I was in college at the course "graphic systems". 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
 
 
-### [KeplerOrbit](KeplerOrbit/index.html)
+### KeplerOrbit
 
 ![Kepler Orbit][kepler]
 
@@ -36,14 +36,19 @@ I developed this WebGL demo when I was preparing for my Thesis defence. It helps
 [Link to demo](KeplerOrbit/index.html) - [Link to source](https://github.com/sebastian-sampayo/KeplerOrbit)
 
 
-## [Thesis](Thesis/SLSampayo-Tesis_10Nov16.pdf)
+## Thesis
 
 ![Thesis][thesis]
 
 **Title**: "Guidance, Navigation and Control System for injection of small satellite into LEO (low-Earth orbit)" 
 **Advisor**: Dr. Eng. Juan I. Giribet
 
-This work was performed within the framework of a collaboration agreement between FIUBA and CoNAE (Argentine Space Activities National Agency), through GPSIC (Signal Processing, Identification and Control Group).
+This work was performed within the framework of a collaboration agreement between 
+[FIUBA](http://www.fi.uba.ar/) and 
+[CoNAE](http://www.conae.gob.ar/) 
+(Argentine Space Activities National Agency), through 
+[GPSIC](http://psic.fi.uba.ar/) 
+(Signal Processing, Identification and Control Group).
 
 [Link to PDF](Thesis/SLSampayo-Tesis_10Nov16.pdf)
 
