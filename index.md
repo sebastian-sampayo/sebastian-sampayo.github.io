@@ -5,6 +5,7 @@ title: Sampayo, Sebastian Lucas
 [//]: # (Image References)
 [behavioral]: ./imgs/behavioral.png
 [vehicleDet]: ./imgs/vehicleDet.png
+[thesis]: ./imgs/thesis.png
 
 
 # Welcome to my personal website
@@ -28,6 +29,9 @@ I developed this WebGL demo when I was preparing for my Thesis defence. It helps
 
 
 ## [Thesis](Thesis/SLSampayo-Tesis_10Nov16.pdf)
+
+![Thesis][thesis]
+
 **Title**: "Guidance, Navigation and Control System for injection of small satellite into LEO (low-Earth orbit)" 
 **Advisor**: Dr. Eng. Juan I. Giribet
 
