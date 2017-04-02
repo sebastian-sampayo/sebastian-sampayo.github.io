@@ -22,7 +22,7 @@ In this web you can take a look at my projects, download my Curriculum Vitae and
 
 ![Amusement Park][amusement]
 
-I developed this project when I was in college at the course "graphic systems". There we learnt about 3D models, rotations, translations, 4D spaces, light models, shaders, and more. We used Javascript and WebGL to code several projects. This one was my final project, and the professors selected it as a featured project hosted in the course website. 
+I developed this project when I was in college at the course "Graphic Systems [86.43]". There we learnt about 3D models, rotations, translations, 4D spaces, light models, shaders, and more. We used Javascript and WebGL to code several projects. This one was my final project, and the professors selected it as a featured project hosted in the course website. 
 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
 
