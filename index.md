@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Sampayo, Sebastian Lucas
 ---
 
 # Welcome to my personal website
