@@ -87,7 +87,7 @@ I developed this project when I was in college at the course "Graphic Systems [8
 
 ![Kepler Orbit][kepler]
 
-I developed this WebGL demo when I was preparing for my Thesis defence. It helps explaining astronomical terminology and classical elements of a Keplerian orbit, as it draws the Earth, the satellite, its orbit, some common frames and reference objects used in my Thesis work. I also used it to take screenshots to enhance some parts of the report.
+I developed this WebGL demo when I was preparing for my Thesis defence. It helps explaining astronomical terminology and classical elements of a Keplerian orbit, as it draws the Earth, the satellite, its orbit, some common frames and reference objects used in my Thesis work. I also used it to take screenshots to enhance some parts of the report. Check out some famous orbits like the Geosynchronous or the Molniya, and play with the inclination, eccentricity, radius and other angles of the ellipse.
 
 [Link to demo](KeplerOrbit/index.html) - [Link to source](https://github.com/sebastian-sampayo/KeplerOrbit)
 
