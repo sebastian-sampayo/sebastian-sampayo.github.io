@@ -52,6 +52,7 @@ That's how I got in touch with Juan and decided to work in guidance, navigation 
 - if you want to actually control the motion of the spacecraft, you can apply all about **control theory**,
 - modern technology lets us implement all the algorithms in **software** programs that we can embed in the vehicle computer,
 - for our model to interact with the real world we must use actuators and sensors and some kind of **hardware** to interface them with the computer,
+
 so there was a lot of acquired knowledge to apply and much more to keep learning.
 
 As Juan was the director of a research group at college (GPSIC), I found the chance to work within the framework of a collaboration agreement between 
