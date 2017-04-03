@@ -55,7 +55,7 @@ That's how I got in touch with Juan and decided to work in guidance, navigation 
 
 so there was a lot of acquired knowledge to apply and much more to keep learning.
 
-As Juan was the director of a research group at college (GPSIC), I found the chance to work within the framework of a collaboration agreement between 
+As Juan is the director of a research group at college (GPSIC), I found the chance to work within the framework of a collaboration agreement between 
 [FIUBA](http://www.fi.uba.ar/) and 
 [CoNAE](http://www.conae.gob.ar/) 
 (Argentine Space Activities National Agency), through 
