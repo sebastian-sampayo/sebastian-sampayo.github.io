@@ -55,11 +55,13 @@ That's how I got in touch with Juan and decided to work in guidance, navigation 
 
 so there was a lot of acquired knowledge to apply and much more to keep learning.
 
-As Juan is the director of a research group at college (GPSIC), I found the chance to work within the framework of a collaboration agreement between 
+As Juan is the director of a research group at college 
+([GPSIC](http://psic.fi.uba.ar/))
+, I found the chance to work within the framework of a collaboration agreement between 
 [FIUBA](http://www.fi.uba.ar/) and 
 [CoNAE](http://www.conae.gob.ar/) 
 (Argentine Space Activities National Agency), through 
-[GPSIC](http://psic.fi.uba.ar/) 
+GPSIC
 (Signal Processing, Identification and Control Research Group), for a national space access program called [Tronador](http://www.conae.gov.ar/index.php/espanol/acceso-al-espacio/tronador-ii).
 
 Some bullet points of this work are described next:
