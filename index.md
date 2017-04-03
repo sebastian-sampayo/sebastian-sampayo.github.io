@@ -90,6 +90,10 @@ I developed this WebGL demo when I was preparing for my Thesis defence. It helps
 
 I developed this project when I was in college at the course "Graphics Systems [86.43]". There we learnt about 3D models, rotations, translations, 4D spaces, light models, shaders, and more. We used Javascript and WebGL to code several projects. This was the last one of the term, and the professors selected it as a featured one hosted in the course website. 
 
+The aim was to create a group of attractions, in particular, a roller coaster. However, the professor warned us against making a loop with the curve of the roller coaster because, with the techniques we had learned so far, it was kind of impossible.
+The challenge of programming the loop was really attractive to me because of the interesting math behind it, the challenging programming skills needed to code it, and the beauty of the visual result itself. So I tried to complete everything else on the project and made a minimal version of a non-loop roller coaster as fast as possible. That way, I managed to leave some time at the end to work on that challenging loop. I talk to the instructors and look for information on the internet for some algorithms. After some modifications and adding my own algorithms, I finally came up with the "initially impossible" loop on the roller coaster.
+This work was considered a featured project by the professor, so it was uploaded to the course website along with other excellent ones from other years.
+
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
 
 
