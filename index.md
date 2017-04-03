@@ -47,7 +47,7 @@ In this project I created a vehicle detection and tracking pipeline with OpenCV,
 
 The thesis was the last step on my way towards the Electronic Engineer degree. I dedicated full time over 10 months in 2016, after passing the last course of the curricula. I wanted to research on a subject where I could be able to apply all the knowledge I had obtained during the previous years, and also to contribute to the solution of a real-world problem.
 That's how I got in touch with Juan and decided to work in guidance, navigation and control algorithms for autonomous aerospace vehicles, specifically for autonomous orbit injection of small spacecrafts. This topic was awesome because it connected a lot of different subjects: 
-- to understand the dynamics of such a vehicle you need to study a lot of **physics**,
+- to understand the dynamics of such vehicle you need to study a lot of **physics**,
 - when you want to describe and predict the behavior of it, you have to create a **math** model,
 - if you want to actually control the motion of the spacecraft, you can apply all about **control theory**,
 - modern technology lets us implement all the algorithms in **software** programs that we can embed in the vehicle computer,
