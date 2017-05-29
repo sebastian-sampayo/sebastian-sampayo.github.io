@@ -8,7 +8,7 @@ title: Sampayo, Sebastian Lucas
 [thesis]: ./imgs/thesis.png
 [amusement]: ./imgs/amusement.png
 [kepler]: ./imgs/keplerOrbit.png
-
+[particle]: ./img/particle_filter.png
 
 # Welcome to my personal website
 
@@ -19,6 +19,20 @@ In this web you can take a look at my projects, download my Curriculum Vitae and
 # Self-Driving Car Engineering Projects
 
 These projects were done through the Self-Driving Car Engineer Nanodegree course.
+
+## Particle Filter in C++
+
+![Simulator][particle]
+
+In this project I implemented a 2 dimensional particle filter to localize an autonomous driving car.
+The code is written in C++, because this language provides great performance in terms of memory and speed.
+The idea of the project is that the car has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data.
+I uploaded in YouTube a video where you can watch how the algorithm works in a simulator. This application generates the ground truth trajectory and sensor data that is passed to the C++ program. The map consists of a set of landmark positions in global coordinates. The car has a radar which can sense landmarks within a certain range in vehicle coordinates. It also uses velocity and yaw rate measurements provided by the control subsystem to make predictions propagating the ecuations of the motion model.
+
+The basic idea of the particle filter algorithm is to generate a lot of particles in some initial state. Then, we move them using the motion model but adding independent noise for each particle, so they all move in different ways. When we get new landmarks observations, we calculate the probability *a posteriori* of these observations for each particle based on the map that is given. All particles have different positions and orientations, so the transformation from vehicle to global coordinates for each observation is different for each particle. Then, the particle that better estimates the car state is the one for which the probability *a posteriori* is higher. This means that its position and orientation explains better the observations, which is the same as saying that the the observations matches the predictions better.
+
+[Link to source](https://github.com/sebastian-sampayo/Kidnapped-Vehicle-Project-Udacity)
+
 
 ## Behavioral Cloning
 
@@ -91,7 +105,7 @@ I developed this WebGL demo when I was preparing for my Thesis defence. It helps
 I developed this project when I was in college at the course "Graphics Systems [86.43]". There we learnt about 3D models, rotations, translations, 4D spaces, light models, shaders, and more. We used Javascript and WebGL to code several projects. This was the last one of the term, and the professors selected it as a featured one hosted in the course website. 
 
 The aim was to create a group of attractions, in particular, a roller coaster. However, the professor warned us against making a loop with the curve of the roller coaster because, with the techniques we had learned so far, it was kind of impossible.
-The challenge of programming the loop was really attractive to me because of the interesting math behind it, the challenging programming skills needed to code it, and the beauty of the visual result itself. So I tried to complete everything else on the project and made a minimal version of a non-loop roller coaster as fast as possible. That way, I managed to leave some time at the end to work on that challenging loop. I talk to the instructors and look for information on the internet for some algorithms. After some modifications and adding my own algorithms, I finally came up with the "initially impossible" loop on the roller coaster.
+The challenge of programming the loop was really attractive to me because of the interesting math behind it, the challenging programming skills needed to code it, and the beauty of the visual result itself. So I tried to complete everything else on the project and made a minimal version of a non-loop roller coaster as fast as possible. That way, I managed to leave some time at the end to work on that challenging loop. I talk to the instructors and look for information on the internet for some algorithms. After some modifications and adding my own tweaks, I finally came up with the "initially impossible" loop on the roller coaster.
 This work was considered a featured project by the professor, so it was uploaded to the course website along with other excellent ones from other years.
 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
