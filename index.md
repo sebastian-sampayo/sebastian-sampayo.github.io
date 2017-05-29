@@ -8,7 +8,7 @@ title: Sampayo, Sebastian Lucas
 [thesis]: ./imgs/thesis.png
 [amusement]: ./imgs/amusement.png
 [kepler]: ./imgs/keplerOrbit.png
-[particle]: ./imgs/particle_filter.png
+[particle]: ./imgs/particle.png
 
 # Welcome to my personal website
 
