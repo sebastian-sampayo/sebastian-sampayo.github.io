@@ -9,6 +9,7 @@ title: Sampayo, Sebastian Lucas
 [amusement]: ./imgs/amusement.png
 [kepler]: ./imgs/keplerOrbit.png
 [particle]: ./imgs/particle.png
+[pathplanning]: ./imgs/pathplanning.gif
 
 # Welcome to my personal website
 
@@ -19,6 +20,17 @@ In this web you can take a look at my projects, download my Curriculum Vitae and
 # Self-Driving Car Engineering Projects
 
 These projects were done through the Self-Driving Car Engineer Nanodegree course.
+
+## Path Planning
+
+![GIF Example][pathplanning]
+
+In this project I designed and developed the software and the algorithms of a path planner for an autonomous driving car.
+The code is written in C++ and the program communicates with a simulator provided by Udacity where there are several vehicles driving on a three lanes road.
+Basically, the simulator sends sensor data of the ego vehicle and the surrounding environment. With this in mind, I model the road with the kinematic state of each vehicle sensed and predict how this is going to change in the near future using a kinematic model. Based on that, the behavior model loops over several goal points and generates trajectories. For each trajectory, it calculates a cost, which represents how safe it is (including max-jerk penalization, max-speed, collision detection, etc). The best one is sent back to the simulator. Most of the core logic is coded in the method `Behavior::UpdateState()`, in the file `behavior.cpp`.
+
+[Link to source](https://github.com/sebastian-sampayo/Path-Planning-Project-Udacity)
+
 
 ## Particle Filter in C++
 
