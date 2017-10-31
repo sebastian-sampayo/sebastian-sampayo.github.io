@@ -2,7 +2,6 @@
 title: Sampayo, Sebastian Lucas
 ---
 
-[![Analytics](https://ga-beacon.appspot.com/UA-109025036-2/welcome-page)](https://github.com/igrigorik/ga-beacon)
 
 [//]: # (Image References)
 [behavioral]: ./imgs/behavioral.png
@@ -123,5 +122,8 @@ The challenge of programming the loop was really attractive to me because of the
 This work was considered a featured project by the professor, so it was uploaded to the course website along with other excellent ones from other years.
 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-109025036-2/welcome-page)](https://github.com/igrigorik/ga-beacon?pixel)
 
 
