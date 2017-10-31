@@ -2,6 +2,8 @@
 title: Sampayo, Sebastian Lucas
 ---
 
+[![Analytics](https://ga-beacon.appspot.com/UA-109025036-2/welcome-page)](https://github.com/igrigorik/ga-beacon)
+
 [//]: # (Image References)
 [behavioral]: ./imgs/behavioral.png
 [vehicleDet]: ./imgs/vehicleDet.png
