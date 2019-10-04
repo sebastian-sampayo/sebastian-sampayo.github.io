@@ -37,7 +37,7 @@ I also present the results of my work in international conferences and discuss n
 
 [Project website](https://wakeup.irisa.fr/) - [Publications](#publications)
 
-[Top](#top)
+ | [Top](#top)
 
 
 # Self-Driving Car Engineering Projects
@@ -54,7 +54,7 @@ Basically, the simulator sends sensor data of the ego vehicle and the surroundin
 
 [Link to source](https://github.com/sebastian-sampayo/Path-Planning-Project-Udacity)
 
-[Top](#top)
+ | [Top](#top)
 
 ## Particle Filter in C++
 
@@ -69,7 +69,7 @@ The basic idea of the particle filter algorithm is to generate a lot of particle
 
 [Link to source](https://github.com/sebastian-sampayo/Kidnapped-Vehicle-Project-Udacity)
 
-[Top](#top)
+ | [Top](#top)
 
 ## Behavioral Cloning
 
@@ -79,7 +79,7 @@ Here I built and trained a convolutional neural network for end-to-end driving i
 
 [Link to source](https://github.com/sebastian-sampayo/Behavioral-Cloning-Project-Udacity)
 
-[Top](#top)
+ | [Top](#top)
 
 ## Vehicle Detection and Tracking
 
@@ -89,7 +89,7 @@ In this project I created a vehicle detection and tracking pipeline with OpenCV,
 
 [Link to source](https://github.com/sebastian-sampayo/Vehicle-Detection-Udacity)
 
-[Top](#top)
+ | [Top](#top)
 
 
 # Aerospace - Undergraduate Thesis
@@ -127,7 +127,7 @@ Some bullet points of this work are described next:
 
 [Link to PDF](Thesis/SLSampayo-Tesis.pdf)
 
-[Top](#top)
+ | [Top](#top)
 
 
 # Computer Graphics - WebGL Demos
@@ -140,7 +140,7 @@ I developed this WebGL demo when I was preparing for my Thesis defence. It helps
 
 [Link to demo](KeplerOrbit/index.html) - [Link to source](https://github.com/sebastian-sampayo/KeplerOrbit)
 
-[Top](#top)
+ | [Top](#top)
 
 ## Amusement Park in WebGL
 
@@ -154,7 +154,7 @@ This work was considered a featured project by the professor, so it was uploaded
 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
 
-[Top](#top)
+ | [Top](#top)
 
 
 # Publications
@@ -164,7 +164,7 @@ This work was considered a featured project by the professor, so it was uploaded
 - S. Sampayo, J. Montavont et T. Noël, **Selecting Parents with Wake-Up Radios for Load Balancing in RPL**, dans les actes du 4e colloque francophone sur la conception de protocoles, l’évaluation de performance et l’expérimentation des réseaux de communication (CoRes), Saint Laurent de la Cabrerisse, France, Juin 2019
 - S. Sampayo, J. Montavont, F. Prégaldiny, T. Noel, **Is Wake-Up Radio the Ultimate Solution to the Latency-Energy Tradeoff in Multi-hop Wireless Sensor Networks?**, in IEEE International Conference on Wireless and Mobile Computing, Networking And Communications (WiMob), October 2018, Limassol, Cyprus
 
-[Top](#top)
+ | [Top](#top)
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-109025036-2/welcome-page)](https://github.com/igrigorik/ga-beacon?pixel)
