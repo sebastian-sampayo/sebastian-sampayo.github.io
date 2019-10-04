@@ -11,12 +11,25 @@ title: Sampayo, Sebastian Lucas
 [kepler]: ./imgs/keplerOrbit.png
 [particle]: ./imgs/particle.png
 [pathplanning]: ./imgs/pathplanning.gif
+[iot]: ./imgs/iotosc.jpg
 
-# Welcome to my personal website
+# About
 
-This a personal website designed to host some featured projects of my career.
-I am an Electronic Engineer graduated from the University of Buenos Aires.
-In this web you can take a look at my projects, download my Curriculum Vitae and also my Thesis report.
+I am an Electronic Engineer graduated with honors, currently pursuing a Ph.D. in Computer Science. I am passionate about IoT, Embedded Systems, Control Systems, and Software Engineering, eager to support the next major revolution in technology. I am interested in interdisciplinary projects.
+
+# Internet of Things - Wake Up Radio
+
+![Internet of Things][iot]
+
+I am currently involved in the Wake-Up Radio project of the National Research Agency of France (ANR) in a balanced consortium composed of two academic partners (University of Rennes 1 and University of Strasbourg), one state-owned industrial and commercial establishment (CEA LETI) and one SME (Wi6Labs).
+
+The Wake-Up Radio is a new technology for IoT. The main idea is that it is a secondary Ultra-Low-Power receiver that is always-on listening to the medium, while the main radio stays sleeping. The main radio only wakes up on-demand by the Wake-Up Radio.
+
+My research focuses on the design of network protocols to take advantage of the features of this new technology. In order to do so, I need to analyze carefully the system, implement the firmware, simulate it with software and finally test it in the experimental platform. This means that my work is balanced between theoretical analysis, software and hardware.
+
+I also present the results of my work in international conferences and discuss new ideas with people from all around the world.
+
+[Project website](https://wakeup.irisa.fr/) - [Publications](#Publications)
 
 # Self-Driving Car Engineering Projects
 
@@ -122,6 +135,13 @@ The challenge of programming the loop was really attractive to me because of the
 This work was considered a featured project by the professor, so it was uploaded to the course website along with other excellent ones from other years.
 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
+
+# Publications
+
+- S. Sampayo, J. Montavont and T. Noël, **eLoBaPS: Towards Energy Load Balancing with Wake-Up Radios for IoT**, in proceedings of the 18th International Conference on Ad-Hoc Networks and Wireless (AdHoc-Now’19), Luxembourg, October 2019
+- S. Sampayo, J. Montavont and T. Noël, **LoBaPS: Load Balancing Parent Selection for RPL Using Wake-Up Radios**, in proceedings of the 24th IEEE International Symposium on Computer Communications (ISCC’19), Barcelona Spain, July 2019
+- S. Sampayo, J. Montavont et T. Noël, **Selecting Parents with Wake-Up Radios for Load Balancing in RPL**, dans les actes du 4e colloque francophone sur la conception de protocoles, l’évaluation de performance et l’expérimentation des réseaux de communication (CoRes), Saint Laurent de la Cabrerisse, France, Juin 2019
+- S. Sampayo, J. Montavont, F. Prégaldiny, T. Noel, **Is Wake-Up Radio the Ultimate Solution to the Latency-Energy Tradeoff in Multi-hop Wireless Sensor Networks?**, in IEEE International Conference on Wireless and Mobile Computing, Networking And Communications (WiMob), October 2018, Limassol, Cyprus
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-109025036-2/welcome-page)](https://github.com/igrigorik/ga-beacon?pixel)
