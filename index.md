@@ -11,7 +11,7 @@ title: Sampayo, Sebastian Lucas
 [kepler]: ./imgs/keplerOrbit.png
 [particle]: ./imgs/particle.png
 [pathplanning]: ./imgs/pathplanning.gif
-[iot]: ./imgs/iotosc2.jpg
+[iot]: ./imgs/iotosc.jpg
 
 
 [Internet of Things](#internet-of-things---wake-up-radio) | [Self-Driving Cars](#self-driving-car-engineering-projects) | [Aerospace](#aerospace---undergraduate-thesis) | [Computer Graphics](#computer-graphics---webgl-demos) | [Publications](#publications)
