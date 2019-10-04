@@ -2,8 +2,8 @@
 title: Sampayo, Sebastian Lucas
 ---
 
+[//]: # (top)
 
-[//]: # (Image References)
 [behavioral]: ./imgs/behavioral.png
 [vehicleDet]: ./imgs/vehicleDet.png
 [thesis]: ./imgs/thesis.png
@@ -13,11 +13,15 @@ title: Sampayo, Sebastian Lucas
 [pathplanning]: ./imgs/pathplanning.gif
 [iot]: ./imgs/iotosc.jpg
 
-[About](index.md) | [Portfolio](portfolio.md)
+
+[Internet of Things](#internet-of-things---wake-up-radio) | [Self-Driving Cars](#self-driving-car-engineering-projects) | [Aerospace](#aerospace---undergraduate-thesis) | [Computer Graphics](#computer-graphics---webgl-demos) | [Publications](#publications)
 
 # About
 
 I am an Electronic Engineer graduated with honors, currently pursuing a Ph.D. in Computer Science. I am passionate about IoT, Embedded Systems, Control Systems, and Software Engineering, eager to support the next major revolution in technology. I am interested in interdisciplinary projects.
+
+[LinkedIn](https://www.linkedin.com/in/sebastian-lucas-sampayo/) | [GitHub](https://github.com/sebastian-sampayo)
+
 
 # Internet of Things - Wake Up Radio
 
@@ -32,6 +36,10 @@ My research focuses on the design of network protocols to take advantage of the 
 I also present the results of my work in international conferences and discuss new ideas with people from all around the world.
 
 [Project website](https://wakeup.irisa.fr/) - [Publications](#publications)
+
+<!-- [Top](#internet-of-things---wake-up-radio) -->
+[Top](#top)
+
 
 # Self-Driving Car Engineering Projects
 
@@ -79,8 +87,11 @@ In this project I created a vehicle detection and tracking pipeline with OpenCV,
 
 [Link to source](https://github.com/sebastian-sampayo/Vehicle-Detection-Udacity)
 
+<!-- [Top](#internet-of-things---wake-up-radio) -->
+[Top](#top)
 
-# Thesis
+
+# Aerospace - Undergraduate Thesis
 
 ![Thesis][thesis]
 
@@ -115,8 +126,11 @@ Some bullet points of this work are described next:
 
 [Link to PDF](Thesis/SLSampayo-Tesis.pdf)
 
+<!-- [Top](#internet-of-things---wake-up-radio) -->
+[Top](#top)
 
-# WebGL Demos
+
+# Computer Graphics - WebGL Demos
 
 ## KeplerOrbit
 
@@ -138,7 +152,11 @@ This work was considered a featured project by the professor, so it was uploaded
 
 [Link to demo](AmusementPark/index-en.html) - [Link to source](https://github.com/sebastian-sampayo/FIUBA--86.43-Sistemas-Graficos/tree/master/TP2-Sampayo)
 
-# <a name="publications">Publications</a>
+<!-- [Top](#internet-of-things---wake-up-radio) -->
+[Top](#top)
+
+
+# Publications
 
 - S. Sampayo, J. Montavont and T. Noël, **eLoBaPS: Towards Energy Load Balancing with Wake-Up Radios for IoT**, in proceedings of the 18th International Conference on Ad-Hoc Networks and Wireless (AdHoc-Now’19), Luxembourg, October 2019
 - S. Sampayo, J. Montavont and T. Noël, **LoBaPS: Load Balancing Parent Selection for RPL Using Wake-Up Radios**, in proceedings of the 24th IEEE International Symposium on Computer Communications (ISCC’19), Barcelona Spain, July 2019
