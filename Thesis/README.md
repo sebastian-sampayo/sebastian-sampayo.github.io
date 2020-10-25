@@ -36,4 +36,6 @@ Some bullet points of this work are described next:
 - Designed and developed an integrated navigation algorithm using Extended Kalman Filter to fusion data from a conventional GPS and inertial sensors (accelerometers and gyros). This allows us to estimate the position, velocity and attitude of the vehicle in real-time as well as predict future states.
 - Analyzed different accelerometers, gyroscopes, IMUs and GPS modules for cost and performance evaluation. I also considered alternative navigation algorithms without accelerometers achieving great results implying a lot of money to save on.
 
+## PDF Report
+
 [Link to PDF](SLSampayo-Tesis.pdf)
