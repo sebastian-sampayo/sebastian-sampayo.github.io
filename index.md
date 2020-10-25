@@ -116,7 +116,7 @@ As Juan is the director of a research group at college
 [CoNAE](http://www.conae.gob.ar/) 
 (Argentine Space Activities National Agency), through 
 GPSIC
-(Signal Processing, Identification and Control Research Group), for a national space access program called [Tronador](http://www.conae.gov.ar/index.php/espanol/acceso-al-espacio/tronador-ii).
+(Signal Processing, Identification and Control Research Group), for a national space access program called [Tronador](https://www.argentina.gob.ar/ciencia/conae/acceso-al-espacio/tronador2).
 
 Some bullet points of this work are described next:
 - Designed and developed an algorithm for autonomous orbit transfer, saving 90% of the human operations time in this manoeuvre and removing the risk of communication interruption. There are several strategies to reach a desired orbit, each one with advantages and disadvantages regarding fuel consumption, time spent, risks and costs. The algorithm developed in this thesis is not the fastest, but is optimal in terms of fuel consumption and quicker than traditional satellite orbit transfer.
