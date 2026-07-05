@@ -18,13 +18,45 @@ title: Sampayo, Sebastian Lucas
 
 # About
 
-Engineering Team Lead and Application Architect with 8+ years of experience designing and delivering scalable distributed systems across regulated industries (banking, automotive safety, medical devices, aerospace). Proven record of leading cross-functional engineering teams, defining architecture strategy, and delivering enterprise-grade systems.
+I'm an Applied AI / GenAI architect, with a background in electronic engineering and a Ph.D. in computer science, and 9+ years
+spanning enterprise AI, embedded systems, and R&D. I currently architect production
+LLM solutions in a highly regulated banking environment, where I act as the primary
+technical advisor — translating complex business challenges into safe, scalable,
+cloud-native AI architectures and guiding them from discovery to production.
 
-Strong expertise in cloud-native architectures, distributed systems, embedded control software, and AI-driven platforms. Experienced in bridging complex technical systems with business and stakeholder needs. Passionate about building robust automation and data frameworks that empower scientific and operational excellence.
+My background is deliberately broad: generative AI in regulated banking,
+safety-critical embedded software (automotive braking systems), medical-device R&D,
+aerospace guidance algorithms, and academic research in wireless/IoT networking.
+That range lets me bridge deep technical work with the business context around it,
+and to communicate with equal ease to engineering teams, business stakeholders, and
+executives.
 
-This website presents a selection of personal and professional projects developed during my Electronic Engineering studies and Ph.D. in Computer Science, last updated in 2020.
+I care about building AI that is reliable, safe, and genuinely useful — and I enjoy
+teaching and mentoring the teams that build it.
 
-[LinkedIn](https://www.linkedin.com/in/sebastian-lucas-sampayo/) | [GitHub](https://github.com/sebastian-sampayo) | <sampayo@unistra.fr>
+## Current work
+
+**Applied AI Architect — IBM, Strasbourg.** I design and
+oversee production generative-AI systems for a major French bank, serving 50,000+
+users in a regulated environment. My team builds an internal AI platform on
+open-source and licensed foundation models, 
+governed through IBM watsonx, and integrates LLM-powered products — summarization,
+classification, meeting synthesis, an Outlook add-in, customer-feedback analysis —
+into the bank's applications. I lead a small engineering team and act as the
+technical advisor connecting engineering, business (métier), and executive
+stakeholders.
+
+*Most of this work is proprietary, so it isn't reflected in the public repositories
+below — those showcase earlier engineering and research projects.*
+
+## Projects
+
+This website presents a selection of engineering and research projects from my earlier work — Ph.D. in
+Computer Science (wireless/IoT), self-driving-car machine-learning projects,
+aerospace guidance & control, and signal processing. For my current professional
+work, see my [LinkedIn](https://www.linkedin.com/in/sebastian-lucas-sampayo/) or CV.
+
+[LinkedIn](https://www.linkedin.com/in/sebastian-lucas-sampayo/) | [GitHub](https://github.com/sebastian-sampayo)
 
 
 # Internet of Things - Wake Up Radio
